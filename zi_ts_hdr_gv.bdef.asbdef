@@ -1,0 +1,201 @@
+managed with additional save with full data implementation in class zbp_i_ts_hdr_gv unique;
+strict ( 2 );
+with draft;
+define behavior for zi_ts_hdr_gv //alias <alias_name>
+persistent table zrap_ts_hrd
+draft table zts_hrddraft
+lock master total etag EmpId
+authorization master ( instance )
+etag master EmpId
+early numbering
+{
+  create ( features : global );
+  update ( features : instance );
+  delete;
+
+  field ( readonly ) EmpId, TimeId, StartDate, EndDate, Zmonth, Attchement;
+
+  side effects
+  { action submitforapproval affects entity _appr;
+    action ApproveTimesheet affects entity _appr;
+    action rejecttimesheet affects entity _appr;
+    action applyleave affects entity _leavehistory;
+    action resubmitforapproval affects entity _appr;
+    action approved affects $self;
+    action rejected affects $self;
+    action expenses affects entity _expenses;
+
+  }
+
+  determination get_week on save { create; }
+  determination update_status1 on save { create; }
+  determination update_appr on save { create; }
+  //  determination update_process on save { create; update; }
+  //  determination update_process1 on modify { create; update; }
+
+  //  determination updatethroughexcel on modify { field Attchement; }
+  validation dulipcate_employe on save { create; field EmpId; }
+  validation daily_status on save { create; update; }
+
+
+  static action login parameter Zi_user_details_gv;
+  //  static action attachement parameter zi_attachement;
+  action ( features : instance ) approved result [1] $self;
+  action ( features : instance ) rejected result [1] $self;
+  action ( features : instance ) rejecttimesheet result [1] $self;
+  action ( features : instance ) ApproveTimesheet result [1] $self;
+  action ( features : instance ) submitforapproval result [1] $self;
+  action ( features : instance ) generatetimesheet result [1] $self;
+  action ( features : instance ) resubmitforapproval result [1] $self;
+  action ( features : instance ) expenses parameter ZABS_EXPENSES result [1] $self;
+  action ( features : instance ) applyleave parameter ZI_time_off_gv result [1] $self;
+  static action logout;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+  association _tsitem { create; with draft; }
+  association _appr { create; with draft; }
+  association _leavehistory { create; with draft; }
+  association _expenses { create; with draft; }
+
+  mapping for zrap_ts_hrd
+    {
+      EmpId      = emp_id;
+      EndDate    = end_date;
+      StartDate  = start_date;
+      Status     = Status;
+      TimeId     = time_id;
+      TotalHours = total_hours;
+      Zmonth     = zmonth;
+      Attchement = attchement;
+      Filename   = filename;
+      MineType   = mine_type;
+    }
+
+}
+
+define behavior for zi_ts_item_gv //alias <alias_name>
+persistent table zrap_ts_item
+draft table zts_itemdraft
+lock dependent by _tsheader
+authorization dependent by _tsheader
+//etag master <field_name>
+early numbering
+{
+  update ( features : instance );
+  delete ( features : instance );
+  determination update_status on modify { create; update; field checkout_time; }
+  validation Validate_workedhours on save { create; update; field Zhours; }
+  validation duplicate_entry on save { create; }
+
+  action ( features : instance ) checkin result [1] $self;
+  action ( features : instance ) checkout result [1] $self;
+  action ( features : instance ) approve result [1] $self;
+  action ( features : instance ) reject parameter zI_REJECT_GV result [1] $self;
+
+  side effects
+  { action approve affects entity _tsheader;
+    action reject affects entity _tsheader;
+  }
+
+  field ( readonly ) TimeId, EmpId, ItemNo;
+  field ( mandatory ) Zdate;
+  association _tsheader { with draft; }
+  mapping for zrap_ts_item
+    {
+      EmpId         = emp_id;
+      ItemNo        = item_no;
+      ProId         = pro_id;
+      Task          = task;
+      TimeId        = time_id;
+      Zdate         = zdate;
+      Zhours        = zhours;
+      Checkin_time  = checkin_time;
+      checkout_time = checkout_time;
+      Status        = status;
+    }
+}
+
+define behavior for zi_appr_gv //alias <alias_name>
+persistent table zrap_appr_gv
+draft table zrap_appr_d1
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+
+
+  update;
+  delete;
+  field ( readonly ) ApprId, TimeId, EmpId, apprnum;
+  association _Header { with draft; }
+
+  mapping for zrap_appr_gv
+    {
+      ApprId   = appr_id;
+      TimeId   = time_id;
+      EmpId    = emp_id;
+      apprnum  = appr_num;
+      Approver = approver;
+      Status   = status;
+      Zdate    = zdate;
+    }
+}
+define behavior for Zi_leave_history //alias <alias_name>
+persistent table zrap_leave_his
+draft table zrap_leave_d1
+lock dependent by _tsheader
+authorization dependent by _tsheader
+//etag master <field_name>
+{
+
+  side effects
+  { action Approve_leave affects entity _tsheader;
+    action reject_leave affects entity _tsheader;
+  }
+  update;
+  delete;
+  field ( readonly ) TimeId, EmpId, LeaveType, Startdate;
+  association _tsheader { with draft; }
+  action ( features : instance ) Approve_leave result [1] $self;
+  action ( features : instance ) reject_leave result [1] $self;
+  mapping for zrap_leave_his
+    {
+      TimeId    = timeid;
+      EmpId     = emp_id;
+      LeaveType = leave_type;
+      Period    = period;
+      Startdate = startdate;
+      Status    = status;
+    }
+}
+define behavior for ZI_EXPENSES //alias <alias_name>
+persistent table zrap_expenses
+draft table zrap_d_expenses
+lock dependent by _tsheader
+authorization dependent by _tsheader
+//etag master <field_name>
+{
+
+
+  update;
+  delete;
+  field ( readonly ) TimeId, EmpId, Category, ExDate;
+  association _tsheader { with draft; }
+  action expenses_approve result [1] $self;
+  action expenses_reject result [1] $self;
+  mapping for zrap_expenses
+    {
+      TimeId      = timeid;
+      EmpId       = emp_id;
+      Status      = status;
+      Category    = category;
+      Description = description;
+      ExDate      = ex_date;
+      PaidBy      = paid_by;
+      TotalAmt    = total_amt;
+    }
+}

@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZG_TS_MSG</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>TS Message Class</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Login successful. Welcome, &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Invalid user ID or password. Please try again.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>You are already logged in today.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Login failed. Please try again.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Login failed. User status could not be updated.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>You have been logged out successfully.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>You are not logged in.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Employee not found. Please log in again.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Timesheet for &amp;1 already exists for employee &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Add at least one daily entry or generate the file before saving.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Worked hours on &amp;1 exceed the daily limit of 9 hours.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>An entry already exists for &amp;1. One entry per day is allowed.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>&amp;1 is outside the current timesheet month.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>014</MSGNR>
+     <TEXT>You are not authorized to approve or reject this timesheet.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>015</MSGNR>
+     <TEXT>Approve the daily entries before approving the timesheet.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>016</MSGNR>
+     <TEXT>Approval email could not be sent. Status was not changed.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>017</MSGNR>
+     <TEXT>Approved and forwarded to the Manager.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>018</MSGNR>
+     <TEXT>Approved and forwarded to Finance for final approval.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>019</MSGNR>
+     <TEXT>Enter a reason before rejecting the timesheet.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>020</MSGNR>
+     <TEXT>Timesheet rejected. Reason: &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>021</MSGNR>
+     <TEXT>Only a Created timesheet can be submitted. Current status: &amp;1</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>022</MSGNR>
+     <TEXT>No approver found for this employee. Please contact HR.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>023</MSGNR>
+     <TEXT>Approval email could not be sent. Timesheet not submitted.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>024</MSGNR>
+     <TEXT>Approval request could not be saved. Please try again.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>025</MSGNR>
+     <TEXT>Timesheet submitted for approval.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>026</MSGNR>
+     <TEXT>Timesheet reset to Created. Edit and submit it again.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>027</MSGNR>
+     <TEXT>No daily entries found for &amp;1. The timesheet file is empty.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>028</MSGNR>
+     <TEXT>Timesheet file &amp;1 generated successfully.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>029</MSGNR>
+     <TEXT>Timesheet approved by Finance.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>030</MSGNR>
+     <TEXT>Timesheet rejected by Finance.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>031</MSGNR>
+     <TEXT>Approver not found for the logged-in user. Please log in again.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>032</MSGNR>
+     <TEXT>The Expenses feature is not available yet.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>033</MSGNR>
+     <TEXT>Leave date &amp;1 is outside the timesheet period.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>034</MSGNR>
+     <TEXT>Insufficient balance for &amp;1. Leave cannot be applied.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>035</MSGNR>
+     <TEXT>Leave email could not be sent. Request not submitted.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>036</MSGNR>
+     <TEXT>Leave request for &amp;1 (&amp;2) submitted for approval.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>037</MSGNR>
+     <TEXT>Leave request for &amp;1 approved. Employee notified by email.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>038</MSGNR>
+     <TEXT>Leave request for &amp;1 approved, but the email could not be sent.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>039</MSGNR>
+     <TEXT>Leave request for &amp;1 rejected. Employee notified by email.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>040</MSGNR>
+     <TEXT>Leave request for &amp;1 rejected, but the email could not be sent.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>041</MSGNR>
+     <TEXT>Checked in at &amp;1.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>042</MSGNR>
+     <TEXT>Check in first before checking out.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>043</MSGNR>
+     <TEXT>Checked out at &amp;1. Hours worked: &amp;2.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>044</MSGNR>
+     <TEXT>Daily entry for &amp;1 approved.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZG_TS_MSG</ARBGB>
+     <MSGNR>045</MSGNR>
+     <TEXT>Daily entry for &amp;1 rejected.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

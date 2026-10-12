@@ -1,0 +1,69 @@
+projection;
+strict ( 2 );
+use draft;
+use side effects;
+define behavior for zc_ts_hdr_gv //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+  use action Activate;
+  use action Discard;
+  use action Edit;
+  use action Prepare;
+  use action Resume;
+  use action rejecttimesheet;
+  use action ApproveTimesheet;
+  use action login;
+  use action logout;
+  use action submitforapproval;
+  use action generatetimesheet;
+  use action applyleave;
+  use action resubmitforapproval;
+  use action expenses;
+  use action approved;
+  use action rejected;
+  //  use action attachement;
+  use association _tsitem
+  { create; with draft; }
+  use association _appr;
+  use association _leavehistory;
+  use association _expenses;
+}
+
+define behavior for ZC_ts_item_gv //alias <alias_name>
+{
+  use update;
+  use delete;
+  use action checkin;
+  use action checkout;
+  use action approve;
+  use action reject;
+  use association _tsheader { with draft; }
+}
+
+define behavior for ZC_appr_gv //alias <alias_name>
+{
+  //  use update;
+  //  use delete;
+  use association _Header { with draft; }
+
+}
+define behavior for ZC_leave_history //alias <alias_name>
+{
+  //  use update;
+  //  use delete;
+  use action Approve_leave;
+  use action reject_leave;
+  use association _tsheader { with draft; }
+
+}
+define behavior for ZC_EXPENSES //alias <alias_name>
+{
+  //  use update;
+  //  use delete;
+  use action expenses_approve;
+  use action expenses_reject;
+  use association _tsheader { with draft; }
+
+}
